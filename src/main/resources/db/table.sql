@@ -7,7 +7,7 @@ create table user_tb(
 );
 
 
-create table purchase_tb(
+create table board_tb(
     id int auto_increment primary key,
     title varchar,
     user_id int,
