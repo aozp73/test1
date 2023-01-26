@@ -2,12 +2,12 @@
 
     <br>
     <footer>
-        <div class="footer">
-            <div>
+        <div class="footer_font">
+            <div class="footer_font1">
                 Created By Apple.
             </div>
             <br>
-            <div>
+            <div class="footer_font2">
                 부산진구 중앙대로 708
             </div>
         </div>
