@@ -11,17 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import shop.mtcoding.test1.dto.BoardAllDto;
-import shop.mtcoding.test1.dto.BoardDetailDto;
+import shop.mtcoding.test1.dto.BoardDto;
 import shop.mtcoding.test1.model.BoardContentRepository;
-import shop.mtcoding.test1.model.BoardRepository;
 import shop.mtcoding.test1.model.User;
 
 @Controller
 public class BoardController {
-
-    @Autowired
-    BoardRepository boardRepository;
 
     @Autowired
     HttpSession session;
@@ -35,7 +30,7 @@ public class BoardController {
         if (user == null) {
             return "redirect:/";
         } else {
-            List<BoardAllDto> boardList = boardRepository.findByUserId(user.getId());
+            List<BoardDto> boardList = boardContentRepository.findAllByUserId(user.getId());
             model.addAttribute("boardList", boardList);
             return "board/list";
         }
@@ -47,7 +42,7 @@ public class BoardController {
         if (user == null) {
             return "redirect:/";
         }
-        BoardDetailDto boardDetail = boardContentRepository.findByUserId(id);
+        BoardDto boardDetail = boardContentRepository.findByUserId(id);
         model.addAttribute("boardDetail", boardDetail);
         return "board/detail";
     }
@@ -60,6 +55,11 @@ public class BoardController {
         }
 
         return "redirect:/board";
+    }
+
+    @GetMapping("/board/insert")
+    public String insert() {
+
     }
 
 }

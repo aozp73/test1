@@ -2,7 +2,7 @@
 
     <header>
         <div class="header_font">
-            <h1>게시글 페이지</h1>
+            <h1>게시글 수정페이지</h1>
         </div>
         <hr>
     </header>
@@ -17,14 +17,15 @@
                             <tr>
                                 <th>게시글</th>
 
-                                <td><input type="text" value="${boardDetail.title}" readonly size="58"></td>
+                                <td>
+                                    <textarea name="head" cols="100" rows="1" readonly>${boardDetail.title}</textarea>
+                                </td>
                             </tr>
                             <tr>
                                 <th>내용</th>
                                 <td>
-                                    <textarea name="content" cols="80" rows="5">${boardDetail.content}</textarea>
+                                    <textarea name="content" cols="100" rows="20">${boardDetail.content}</textarea>
                                 </td>
-                                <!-- <td><input type="text" name="content" value="${boardDetail.content}"> </td> -->
                             </tr>
 
                         </table>

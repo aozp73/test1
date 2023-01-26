@@ -5,15 +5,14 @@
 
 <mapper namespace="shop.mtcoding.test1.model.BoardContentRepository">
 
-    <select id="findByUserId" resultType="shop.mtcoding.test1.dto.BoardDetailDto">
-        select bc.id, bc.user_id, bc.content, b.title, b.created_at from 
-        (SELECT * FROM BOARDCONTENT_TB where id = #{id}) bc
+    <select id="findAllByUserId" resultType="shop.mtcoding.test1.dto.BoardDto">
+        select id, user_id, content, title, created_at from 
+        BOARDCONTENT_TB where user_id = #{id}
+    </select>
 
-        inner join user_tb u
-        on bc.user_id = u.id
-
-        inner join board_tb b
-        on bc.board_id = b.id
+    <select id="findByUserId" resultType="shop.mtcoding.test1.dto.BoardDto">
+        select id, user_id, content, title, created_at from 
+        BOARDCONTENT_TB where id = #{id}
     </select>
 
     <update id="updateById">
