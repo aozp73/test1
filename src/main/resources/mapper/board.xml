@@ -6,7 +6,7 @@
 <mapper namespace="shop.mtcoding.test1.model.BoardRepository">
     <select id="findByUserId" resultType="shop.mtcoding.test1.dto.BoardAllDto">
       select id, title, created_at from 
-      (SELECT * FROM BOARD_TB where user_id = 1) 
+      (SELECT * FROM BOARD_TB where user_id = #{id}) 
       order by id desc
     </select>
 </mapper>
