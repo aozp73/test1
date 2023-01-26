@@ -37,14 +37,14 @@ public class BoardController {
     }
 
     @GetMapping("/brard/{id}")
-    public String detail(@PathVariable int id, Model model) {
+    public String detailUpdate(@PathVariable int id, Model model) {
         User user = (User) session.getAttribute("principal");
         if (user == null) {
             return "redirect:/";
         }
         BoardDto boardDetail = boardContentRepository.findByUserId(id);
         model.addAttribute("boardDetail", boardDetail);
-        return "board/detail";
+        return "board/detailUpdate";
     }
 
     @PostMapping("/board/update")
@@ -71,6 +71,17 @@ public class BoardController {
             boardContentRepository.insert(user.getId(), title, content);
             return "redirect:/board";
         }
+    }
+
+    @GetMapping("/board/{id}/detail")
+    public String detail(@PathVariable int id, Model model) {
+        User user = (User) session.getAttribute("principal");
+        if (user == null) {
+            return "redirect:/";
+        }
+        BoardDto boardDetail = boardContentRepository.findByUserId(id);
+        model.addAttribute("boardDetail", boardDetail);
+        return "board/detail";
     }
 
 }

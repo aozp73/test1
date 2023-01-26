@@ -25,3 +25,12 @@ create table boardcontent_tb(
     created_at timestamp,    
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user_tb(id)     
 );
+
+create table boardcomment_tb(
+    id int auto_increment primary key,
+    user_id int,
+    boardcontent_id int,
+    comment_content varchar,
+    CONSTRAINT fk_user2 FOREIGN KEY (user_id) REFERENCES user_tb(id),
+    CONSTRAINT fk_board2 FOREIGN KEY (boardcontent_id) REFERENCES boardcontent_tb(id)
+)

@@ -22,8 +22,13 @@
                         <c:forEach items="${boardList}" var="board">
                             <tr>
                                 <td>${board.id}</td>
-                                <td><a href="/brard/${board.id}">${board.title}</a> </td>
+                                <td><a href="/board/${board.id}/detail">${board.title}</a></td>
                                 <td>${board.createdAtToString}</td>
+                                <form action="/brard/${board.id}" method="get">
+                                    <td>
+                                        <button type="submit">수정</button>
+                                    </td>
+                                </form>
                             </tr>
                         </c:forEach>
                     </table>
