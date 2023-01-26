@@ -9,4 +9,5 @@ import shop.mtcoding.test1.dto.BoardAllDto;
 @Mapper
 public interface BoardRepository {
     public List<BoardAllDto> findByUserId(int id);
+
 }
