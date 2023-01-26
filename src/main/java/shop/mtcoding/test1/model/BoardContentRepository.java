@@ -15,4 +15,6 @@ public interface BoardContentRepository {
     public BoardDto findByUserId(int id);
 
     public int updateById(@Param("id") int id, @Param("content") String content);
+
+    public int insert(@Param("userId") int id, @Param("title") String title, @Param("content") String content);
 }

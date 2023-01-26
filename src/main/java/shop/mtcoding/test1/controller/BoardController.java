@@ -57,9 +57,20 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    @GetMapping("/board/insert")
-    public String insert() {
+    @GetMapping("/board/insertForm")
+    public String insertForm() {
+        return "board/insertForm";
+    }
 
+    @PostMapping("/board/insert")
+    public String insert(String title, String content) {
+        User user = (User) session.getAttribute("principal");
+        if (user == null) {
+            return "redirect:/";
+        } else {
+            boardContentRepository.insert(user.getId(), title, content);
+            return "redirect:/board";
+        }
     }
 
 }

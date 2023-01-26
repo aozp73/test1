@@ -27,7 +27,7 @@
                             </tr>
                         </c:forEach>
                     </table>
-                    <a href="/board/insert">글쓰기</a>
+                    <a href="/board/insertForm">글쓰기</a>
 
                 </div>
             </div>

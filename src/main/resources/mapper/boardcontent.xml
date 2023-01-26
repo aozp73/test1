@@ -21,4 +21,8 @@
         where id = #{id}
     </update>
 
+    <insert id="insert">
+      insert into boardcontent_tb(user_id, title, content, created_at) values(#{userId},#{title},#{content},now())
+    </insert>
+
 </mapper>
