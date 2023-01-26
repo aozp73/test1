@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-
-            <h1>회원가입 페이지</h1>
-            <hr>
-
+    <h1>로그인 페이지</h1>
+    <hr>
     <%@ include file="../layout/header.jsp" %>
 
-        <form action="/join" method="post">
+        <form action="/login" method="post">
             <table border="1">
                 <tr>
                     <th>유저네임</th>
@@ -16,12 +14,8 @@
                     <th>패스워드</th>
                     <td><input type="password" name="password" placeholder="Enter password"></td>
                 </tr>
-                <tr>
-                    <th>이메일</th>
-                    <td><input type="email" name="email" placeholder="Enter email"></td>
-                </tr>
             </table>
-            <button type="submit">회원가입완료</button>
+            <button type="submit">로그인</button>
         </form>
 
 

@@ -8,12 +8,16 @@
       insert into user_tb(username, password, email, created_at) values(#{username},#{password},#{email},now())
     </insert>
 
-    <select id="findAll" resultType="shop.mtcoding.test1.model.UserRepository">
+    <select id="findAll" resultType="shop.mtcoding.test1.model.User">
       select * from user_tb
     </select>
 
-    <select id="findById" resultType="shop.mtcoding.test1.model.UserRepository">
+    <select id="findById" resultType="shop.mtcoding.test1.model.User">
       select * from user_tb where id = #{id}
+    </select>
+  
+    <select id="findByUsernameAndPassword" resultType="shop.mtcoding.test1.model.User">
+      select * from user_tb where username = #{username} and password = #{password}
     </select>
 
     <update id="updateById">
