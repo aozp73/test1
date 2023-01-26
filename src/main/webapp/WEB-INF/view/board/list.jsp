@@ -5,23 +5,23 @@
     <%@ include file="../layout/header.jsp" %>
 
 
-            <table border="1">
+        <table border="1">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일</th>
+            </tr>
+            <c:forEach items="${boardList}" var="board">
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>작성일</th>
+                    <td>${board.id}</td>
+                    <td>${board.title}</td>
+                    <td>${board.createdAtToString}</td>
                 </tr>
-                <tr>
-                    
-                </tr>
-                <tr>
-                
-                </tr>
-                <tr>
+            </c:forEach>
+        </table>
+        <a href="">글쓰기</a>
+        <br>
 
-                </tr>
-            </table>
-            
 
 
 

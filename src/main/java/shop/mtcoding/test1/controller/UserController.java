@@ -24,7 +24,7 @@ public class UserController {
         return "user/joinForm";
     }
 
-    @GetMapping("/loginForm")
+    @GetMapping({ "/", "/loginForm" })
     public String loginForm() {
         return "user/loginForm";
     }
@@ -47,7 +47,7 @@ public class UserController {
             return "redirect:/loginForm";
         } else {
             session.setAttribute("principal", user);
-            return "redirect:/";
+            return "redirect:/board";
         }
     }
 
